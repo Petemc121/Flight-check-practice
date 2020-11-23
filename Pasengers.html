@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dont resize me! I'm ticklish!</title>
+</head>
+<body>
+
+  <div id="quack"></div>
+    <script>
+  var passengers = [{name:"bob", paid: true},
+                    {name:"james", paid: true},
+                    {name:"jim", paid: false},
+                    {name:"kyle", paid: true}]
+
+      var passengerList = ["bob", "james", "jim", "kyle"]              
+  
+      var noFlyList = ["jim", "tom", "sam", "pete"]
+
+      var noFlyCheck = function() {
+
+                        for (i=0;i<passengerList.length;i++) {
+                          name = passengerList[i]
+                          if (noFlyList[i].indexOf(name) = 1) {
+                            return false
+                          }
+                        }
+
+                        return true
+
+                        }
+
+      var payCheck = function() {
+              for (i = 0; i<passengers.length; i++) {
+                if (passengers[i].paid = false) {
+                  return false
+                }
+
+              }
+              return true
+      }
+
+      noFlyCheck()
+      payCheck()
+
+      function Fly() {
+        
+        if (noFlyCheck === true && payCheck === true) {
+            alert("Let's fly!")
+        } else if (noFlyCheck === false && payCheck === true) {
+          alert("uh oh, there seems to be a problem. Someone is on the no fly list")
+        } else if (noFlyCheck === true && payCheck === false) {
+          alert("Uh oh, there seems to be a problem. Someone hasn't paid. Cheapskate.")
+        } else if (noFlyCheck ===false && payCheck === false) {
+          alert("Uh oh, there seems to be a problem. Someone hasn't paid, and someone appears to be on the no flight list!")
+        }
+      }
+
+      Fly()
+    </script>
+
+</body>
+
+</html>
